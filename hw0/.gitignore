@@ -1,0 +1,11 @@
+.idea/
+# Assets/
+Library/
+Logs/
+obj/
+# Packages/
+# ProjectSettings/
+UserSettings/
+.vsconfig
+*.csproj
+hw0.sln

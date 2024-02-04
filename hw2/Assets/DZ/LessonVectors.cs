@@ -127,30 +127,25 @@ namespace Sample
         public static bool RayCircleIntersect(Ray ray, Vector3 center, float radius)
         {
             Vector3 v = ray.origin - center;
-            double b = 2.0 * Vector3.Dot(ray.direction, v);
+            double b = Vector3.Dot(ray.direction, v);
             double c = Vector3.Dot(v, v) - MathF.Pow(radius, 2);
-            float discr = (float)(Mathf.Pow((float)b, 2) - 4.0 * (float)c);
+            float discr = (float)(Mathf.Pow((float)b, 2) - (float)c);
 
-            Debug.LogError($"*********************");
-            Debug.LogError($"Origin {ray.origin.x}:{ray.origin.y}:{ray.origin.z} Direction {ray.direction.x}:{ray.direction.y}:{ray.direction.z} Center {center.x}:{center.y}:{center.z} Radius {radius}");
-            Debug.LogError($"Discrement 0: {discr} Discrement 1: {-b - discr} Discrement 2: {-b + discr} b: {b} c: {c}");
-            Debug.LogError($"Result {((-b - discr >= 0) || (-b + discr >= 0))}");
+            if ((discr > 0 && discr < 0.00001f) || (discr < 0 && discr > -0.00001f)) {
+                discr = 0;
+            }
 
             if (discr < 0)
             {
                 return false;
-            }
+            } 
             discr = Mathf.Sqrt(discr);
-            Debug.LogError($"_____________________");
 
             if ((-b - discr > 0) && (-b + discr > 0))
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
     }
 }

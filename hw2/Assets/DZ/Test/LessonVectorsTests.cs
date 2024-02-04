@@ -73,7 +73,7 @@ namespace Tests
             Assert.IsFalse(RayCircleIntersect(new Ray(Vector3.zero, Vector3.zero), new Vector3(0, 4, 0), 1));
             Assert.IsFalse(RayCircleIntersect(new Ray(new Vector3(0, 20, 0), Vector3.up), new Vector3(0, 4, 0), 2));
             Assert.IsTrue(RayCircleIntersect(new Ray(new Vector3(1, 0, 0), Vector3.up), new Vector3(0, 4, 0), 1));
-            //Assert.IsTrue(RayCircleIntersect(new Ray(Vector3.zero, new Vector3(1, 1, 1)), new Vector3(5, 5, 5), 0.5f));
+            Assert.IsTrue(RayCircleIntersect(new Ray(Vector3.zero, new Vector3(1, 1, 1)), new Vector3(5, 5, 5), 0.5f));
             Assert.IsTrue(RayCircleIntersect(new Ray(Vector3.zero, new Vector3(1, 1, 1)), new Vector3(5, 5, 5), 0));
             Assert.IsFalse(RayCircleIntersect(new Ray(Vector3.zero, new Vector3(-1, -1, -1)), new Vector3(5, 5, 5), 2));
             Assert.IsFalse(RayCircleIntersect(new Ray(Vector3.zero, Vector3.up), Vector3.zero, 1));

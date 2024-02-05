@@ -131,7 +131,7 @@ namespace Sample
             double c = Vector3.Dot(v, v) - MathF.Pow(radius, 2);
             float discr = (float)(Mathf.Pow((float)b, 2) - (float)c);
 
-            if ((discr > 0 && discr < 0.00001f) || (discr < 0 && discr > -0.00001f)) {
+            if (Mathf.Abs(discr) < 0.00001f) {
                 discr = 0;
             }
 
